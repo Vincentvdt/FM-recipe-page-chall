@@ -70,6 +70,11 @@ table {
     STYLE
 */
 
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 :root {
     --white: hsl(0, 0%, 100%);
     --stone-100: hsl(30, 54%, 90%);
