@@ -99,8 +99,14 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    background-color: var(--white);
     color: var(--stone-600);
+}
+
+@media (min-width: 1440px) {
+    html {
+        background-color: var(--stone-100);
+        padding-block: 10dvh;
+    }
 }
 
 body {
@@ -123,8 +129,17 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .page {
-    max-width: 1440px;
-    margin-inline: auto;
+    background: var(--white);
+
+}
+
+@media (min-width: 1440px) {
+    .page {
+        max-width: 55dvw;
+        margin-inline: auto;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
 }
 
 
@@ -132,21 +147,17 @@ h1, h2, h3, h4, h5, h6 {
    TYPOGRAPHY ELEMENTS
    ========================================================================== */
 
-h1 {
-    font-size: clamp(1.1rem, 1rem + 0.6vw, 1.25rem);
-    line-height: 1.1;
-}
 
 h2 {
     font-size: clamp(1.1rem, 1rem + 0.6vw, 1.25rem);
     color: var(--brown-800);
-    margin-block-end: 1.25rem;
+    margin-block-end: 1rem;
 }
 
 @media (min-width: 1440px) {
     h2 {
         font-size: clamp(1.6rem, 1.25rem + 0.9vw, 1.9rem);
-        margin-block-end: 1.5rem;
+
     }
 }
 
@@ -200,7 +211,8 @@ p {
     width: 100%;
     border: 0;
     border-top: 1px solid var(--stone-100);
-    margin-block: 1.5rem;
+    margin-block-start: 2rem;
+    padding: 0;
 }
 
 /* ==========================================================================
@@ -258,15 +270,14 @@ ol li::marker {
    RECIPE HEADER & DESCRIPTION
    ========================================================================== */
 
-.recipe {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.recipe section {
+    margin-block: 1.5rem;
 }
 
 .recipe .name {
     font-size: clamp(1.4rem, 1rem + 2.2vw, 2rem);
     color: var(--stone-900);
+    margin-block-end: 0.5rem;
 }
 
 .recipe .description {
@@ -276,13 +287,14 @@ ol li::marker {
     line-height: 1.5;
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 1440px) {
     .recipe {
-        gap: 2.5rem;
+        gap: 2rem;
+
     }
 
     .recipe .name {
-        font-size: clamp(2.25rem, 1.5rem + 2.8vw, 3.5rem);
+        font-size: clamp(1.25rem, 3vw, 2.5rem);
     }
 }
 
@@ -363,26 +375,3 @@ ol li::marker {
     line-height: 1.5;
 }
 
-/* ==========================================================================
-   12) UTILITIES (tiny helpers you might reuse)
-   ========================================================================== */
-
-.visually-hidden {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 0;
-    padding: 0;
-}
-
-.center {
-    margin-inline: auto;
-}
-
-.radius-lg {
-    border-radius: 1rem;
-}
