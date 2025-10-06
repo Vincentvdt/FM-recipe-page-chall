@@ -227,7 +227,6 @@ ol > li::marker {
 
         margin-top: 1.5rem;
 
-        &
         tr {
             border-bottom: 1px solid var(--stone-100);
 
